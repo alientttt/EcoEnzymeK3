@@ -1,4 +1,4 @@
-import { X, CheckCircle2 } from "lucide-react";
+import { X } from "lucide-react";
 import type { Member } from "../../../data/dataMember";
 
 const MemberModal = ({

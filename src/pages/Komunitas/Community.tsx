@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import { Container } from "../../components/layout/Container";
 import { Section } from "../../components/layout/Section";
 
 const Community = () => {

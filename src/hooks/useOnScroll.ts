@@ -1,6 +1,5 @@
 // src/hooks/useOnScroll.ts
 import { useEffect, useRef, useState } from "react";
-import type { RefObject } from "react";
 
 export function useOnScroll(threshold = 0.3) {
   const [isVisible, setIsVisible] = useState(false);
