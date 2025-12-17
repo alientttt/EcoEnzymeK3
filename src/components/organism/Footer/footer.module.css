@@ -1,0 +1,9 @@
+.footerImage {
+  position: relative;
+  overflow: hidden;
+  background-image: url("../../../../src/assets/footerImage.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 600px;
+}

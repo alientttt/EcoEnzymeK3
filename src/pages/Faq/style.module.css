@@ -1,0 +1,77 @@
+/* BLOCK: faq */
+.faq {
+  /* Vanilla CSS untuk background dan font-family utama */
+  min-height: 100vh;
+
+  font-family: sans-serif;
+  color: #273b29; /* Warna mirip Tailwind text-[#273B29] */
+  padding-bottom: 2rem;
+}
+
+/* ELEMENT: faq__container */
+.faq__container {
+  max-width: 90rem; /* max-w-7xl + buffer, set 1440px = 90rem */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ELEMENT: faq__grid */
+.faq__grid {
+  display: grid;
+  gap: 2rem; /* Jarak antara item grid */
+  grid-template-areas:
+    "hero hero"
+    "nav content";
+  grid-template-columns: 200px 1fr; /* Navigasi 200px, Konten sisanya */
+  align-items: start; /* Konten dimulai dari atas */
+}
+
+/* ELEMENT: faq__hero */
+.faq__hero {
+  grid-area: hero;
+}
+
+/* ELEMENT: faq__nav */
+.faq__nav {
+  grid-area: nav;
+  /* Sticky positioning untuk aside nav */
+  position: sticky;
+  top: 7rem; /* Jarak dari atas setelah header */
+  height: max-content;
+}
+
+/* ELEMENT: faq__content */
+.faq__content {
+  grid-area: content;
+  /* Memberi ruang bagi konten untuk scroll tanpa terpotong sticky nav */
+}
+
+/* Responsive Design */
+
+/* Mobile & Tablet (<= 1024px) */
+@media (max-width: 64rem) {
+  .faq__grid {
+    grid-template-areas:
+      "hero"
+      "nav"
+      "content";
+    grid-template-columns: 1fr; /* Semua jadi 1 kolom */
+    gap: 1.5rem;
+  }
+
+  .faq__nav {
+    /* Non-sticky di mobile, karena navigasi akan berada di atas konten utama */
+    position: static;
+    top: auto;
+  }
+}
+
+/* Desktop Besar (> 1440px) */
+@media (min-width: 90rem) {
+  .faq__container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

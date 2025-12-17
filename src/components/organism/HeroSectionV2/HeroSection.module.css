@@ -1,0 +1,197 @@
+/* layout utama */
+.bentoHero {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f8f7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* container pembungkus svg dan konten */
+.wrapperPentangon {
+  position: relative;
+  width: 90%;
+  max-width: 1400px;
+  aspect-ratio: 1361 / 801;
+}
+
+.wrapperSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.imageCenter {
+  position: absolute;
+  z-index: 2;
+  top: 70%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* grid layout */
+.wrapperInnerPentangon {
+  position: absolute;
+  inset: 0; /* Memenuhi wrapper-clip */
+  z-index: 10;
+
+  /* Grid Setup */
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  /* Baris: Atas (auto/sesuai isi) Bawah (sisa space) */
+  grid-template-rows: 1fr auto;
+  /* Penamaan Area untuk kontrol posisi */
+  grid-template-areas:
+    "logo hero"
+    "cards optional";
+
+  gap: 2rem;
+  padding: 8% 6% 4% 6%; /* Atas Kanan Bawah Kiri */
+}
+
+.areaLogo {
+  grid-area: logo;
+}
+.areaHero {
+  grid-area: hero;
+}
+.areaCards {
+  grid-area: cards;
+}
+
+/* kiri atas */
+.wrapperLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Mulai dari atas */
+  gap: 1rem;
+}
+
+/* kanan atas */
+.wrapperHeroText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Rata kanan */
+  text-align: right;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.textHero {
+  max-width: 90%;
+  margin-bottom: 1rem;
+  color: #F8F7F6;
+}
+
+.btnViewAll {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+/* kiri bawah */
+.wrapperCards {
+  display: flex;
+  align-items: flex-end; /* Tempel ke bawah */
+  gap: 1rem;
+  width: 100%;
+}
+.card {
+  flex: 1; /* Kartu berbagi lebar rata */
+  background-color: #f8f7f6;
+  border-radius: 12px;
+  padding: 1rem;
+  min-height: 100px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* navigation */
+.overNavigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 6rem;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.overUl {
+  display: flex;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px 30px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+}
+
+.overLink {
+  color: #333;
+  font-weight: 600;
+}
+
+/* --- SOCIAL MEDIA --- */
+.socialMediaWrapperUl {
+  display: flex;
+  gap: 10px;
+}
+.socialMediaCircle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  background-color: #414A37;
+}
+
+
+/* responsive mobile */
+@media (max-width: 768px) {
+  .wrapperPentangon {
+    aspect-ratio: unset; /* Lepaskan rasio di HP agar bisa memanjang ke bawah */
+    height: auto;
+    min-height: 100vh;
+    background-color: #e0d8d5; /* Fallback warna karena SVG mungkin terdistorsi */
+    border-radius: 20px;
+  }
+  .wrapperSvg {
+    display: none; /* Sembunyikan SVG rumit di HP, ganti solid color/simple shape */
+  }
+  .wrapperInnerPentangon {
+    position: relative; /* Balik ke relative flow */
+    inset: unset;
+    grid-template-columns: 1fr; /* 1 Kolom ke bawah */
+    grid-template-areas:
+      "logo"
+      "hero"
+      "cards"
+      "optional";
+    gap: 3rem;
+    padding: 6rem 2rem 2rem 2rem;
+  }
+  .wrapperHeroText {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .wrapperCards {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    min-width: 45%;
+  }
+}
