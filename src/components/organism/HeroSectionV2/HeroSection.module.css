@@ -92,7 +92,7 @@
   background: #333;
   color: #fff;
   padding: 10px 20px;
-  border-radius: 50px;
+  border-radius: 5px;
 }
 
 /* kiri bawah */
@@ -103,9 +103,9 @@
   width: 100%;
 }
 .card {
-  flex: 1; /* Kartu berbagi lebar rata */
+  flex: 1; 
   background-color: #f8f7f6;
-  border-radius: 12px;
+  border-radius: 5px;
   padding: 1rem;
   min-height: 100px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -135,11 +135,6 @@
   backdrop-filter: blur(5px);
 }
 
-.overLink {
-  color: #333;
-  font-weight: 600;
-}
-
 /* --- SOCIAL MEDIA --- */
 .socialMediaWrapperUl {
   display: flex;
@@ -164,16 +159,16 @@
     aspect-ratio: unset; /* Lepaskan rasio di HP agar bisa memanjang ke bawah */
     height: auto;
     min-height: 100vh;
-    background-color: #e0d8d5; /* Fallback warna karena SVG mungkin terdistorsi */
+    background-color: #e0d8d5; 
     border-radius: 20px;
   }
   .wrapperSvg {
-    display: none; /* Sembunyikan SVG rumit di HP, ganti solid color/simple shape */
+    display: none; 
   }
   .wrapperInnerPentangon {
-    position: relative; /* Balik ke relative flow */
+    position: relative; 
     inset: unset;
-    grid-template-columns: 1fr; /* 1 Kolom ke bawah */
+    grid-template-columns: 1fr; 
     grid-template-areas:
       "logo"
       "hero"

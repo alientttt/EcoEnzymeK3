@@ -20,7 +20,10 @@ const FEATURES = [
 
 const HeroSectionV2: React.FC = () => {
   return (
-    <section className={styles.bentoHero}>
+    <section className={`${styles.bentoHero} animate-fade-up`}>
+      {/* ini header = maksudnya adalah head atau judul dari section hero.
+      Lalu di dalam hedaer ada elemen nav,nav maksudnya adalah untuk navigasi,nav ini biasanya sering muncul atau sering digunakan untuk membuat navbar,seperti pada hero section ini.
+      lalu di dalam nav ada looping elemen a,jadi elemen a ini digunakan karena ada atribut href,atribut href ini berfungsi ketika kita klik salah satu pilihan About,Tutorial,Team maka nanti akan scroll otomatis ke href yang di tuju. */}
       <header className={styles.overNavigation}>
         <nav className={styles.overUl}>
           {NAV_LINKS.map((link) => (
@@ -65,7 +68,7 @@ const HeroSectionV2: React.FC = () => {
               lingkungan, serta mendorong kesadaran akan pentingnya menjaga
               alam.
             </p>
-            <a href="#all" className={styles.btnViewAll}>
+            <a href="#all" className={`${styles.btnViewAll} hover:opacity-65`}>
               <span>Lets Explore</span>
             </a>
           </article>

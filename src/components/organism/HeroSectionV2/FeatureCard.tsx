@@ -12,7 +12,7 @@ export const FeatureCard = ({
   className,
 }: FeatureCardProps) => (
   <a href={href} className={className}>
-    <span>{label}</span>
-    <p>{title}</p>
+    <span className="text-lg font-medium">{label}</span>
+    <p className="text-xl text-[#37723B] font-semibold">{title}</p>
   </a>
 );

@@ -1,33 +1,49 @@
 import type { Category } from "../../data/dataManfaat";
 import { ArrowRight } from "lucide-react";
-const CardManfaat = ({item,onClick,}: {item: Category;onClick: (title: string) => void;}) => {
+
+const CardManfaat = ({
+  item,
+  onClick,
+}: {
+  item: Category;
+  onClick: (title: string) => void;
+}) => {
   return (
-    <div
+    <article
       onClick={() => onClick(item.title)}
-      className="group bg-[#dfdad5] rounded-[1rem] p-6 md:p-8 shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border border-transparent hover:border-[#37723B]/20 relative overflow-hidden flex flex-col items-start text-left h-full w-full lg:w-80"
+      className="
+        group relative flex flex-col items-start h-96 w-full lg:w-80 p-4
+        text-[#414A37] rounded-[1rem] overflow-hidden
+        hover:shadow-2xl 
+        transition-all duration-300 cursor-pointer
+        bg-center bg-cover bg-no-repeat
+      "
+      style={{ backgroundImage: `url(${item.img})` }}
     >
-      <div className="absolute top-0 left-0 w-full h-2 bg-[#37723B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
 
-      <div className="relative w-full h-40 mb-4 rounded-xl overflow-hidden shadow-lg">
-        <img
-          src={item.img}
-          alt={item.alt}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
+      <div className="relative z-10 flex flex-1 justify-end items-start w-full p-4">
+        <h2 className="text-xl font-bold text-[#F8F7F6] border border-[#F8F7F6]/50 rounded-full w-fit px-4 backdrop-blur-sm">
+          {item.title}
+        </h2>
       </div>
 
-      <h4 className="text-xl font-bold text-[#37723B] mb-2 mt-2">
-        {item.title}
-      </h4>
-      <p className="text-gray-500 text-sm line-clamp-3 mb-6 leading-relaxed">
-        {item.caption}
-      </p>
-
-      <div className="mt-auto flex items-center text-sm font-bold text-[#37723B] group-hover:gap-2 transition-all">
-        <span>Lihat Manfaat Lebih Lanjut</span>
-        <ArrowRight size={16} />
+      <div
+        className="
+          box-desc relative z-10 flex h-fit w-full justify-between items-end 
+          text-[#F8F7F6] font-normal text-lg max-w-2xl 
+          p-4 rounded-xl transition-all duration-500
+          border border-transparent
+          hover:bg-white/10 hover:backdrop-blur-md hover:border-white/20 hover:shadow-xl
+        "
+      >
+        <h4 className="flex-1 pr-4">{item.caption}</h4>
+        <div className="shrink-0 mb-1">
+          <ArrowRight size={30} />
+        </div>
       </div>
-    </div>
+    </article>
   );
 };
+
 export default CardManfaat;

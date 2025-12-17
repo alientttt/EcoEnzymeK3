@@ -1,7 +1,7 @@
-import badgehouse from "../assets/house.webp";
-import badgefarmer from "../assets/farmer.webp";
-import badgeleaf from "../assets/fruit-waste.webp";
-
+import badgepertanian from "../assets/benefit1.png";
+import badgelingkungan from "../assets/benefit2.png";
+import badgehomecare from "../assets/benefit3.png";
+import badgehealthcare from "../assets/benefit4.png";
 
 export interface Category {
   title: string;
@@ -13,9 +13,9 @@ export interface Category {
 
 export const categoriesData: Category[] = [
   {
-    img: badgeleaf,
-    title: "Untuk Lingkungan",
-    caption: "Mengurangi sampah organik, menjaga kebersihan air dan udara.",
+    img: badgelingkungan,
+    title: "Lingkungan",
+    caption: "Untuk lingkungan lebih bersih",
     alt: "lingkungan-image",
     details: [
       "Mengurai polutan di udara (Nitrogen Monoksida, Sulfur Dioksida)",
@@ -25,9 +25,9 @@ export const categoriesData: Category[] = [
     ],
   },
   {
-    img: badgehouse,
-    title: "Untuk Rumah Tangga",
-    caption: "Pembersih alami, hemat biaya, aman tanpa bahan kimia.",
+    img: badgehomecare,
+    title: "Home Care",
+    caption: "Pembersih alami tanpa kimia",
     alt: "rumah-tangga-image",
     details: [
       "Pembersih lantai serbaguna dan desinfektan alami",
@@ -37,10 +37,10 @@ export const categoriesData: Category[] = [
     ],
   },
   {
-    img: badgefarmer,
-    title: "Untuk Pertanian",
+    img: badgepertanian,
+    title: "Pertanian",
     caption:
-      "Pupuk organik, menyuburkan tanah, dan mengusir hama secara alami.",
+      "Untuk bahan pertanian alami",
     alt: "pertanian-image",
     details: [
       "Pupuk daun dan penyubur tanah (rasio 1:1000 dengan air)",
@@ -49,5 +49,17 @@ export const categoriesData: Category[] = [
       "Memperbaiki kondisi tanah yang rusak oleh bahan kimia",
     ],
   },
+  {
+    img: badgehealthcare,
+    title: "Health Care",
+    caption:
+      "Untuk kesehatan dan kebersihan",
+    alt: "kesehatan-image",
+    details: [
+      "Mengurangi bau badan dan bau kaki (campuran air)",
+      "Digunakan sebagai pembersih tangan alami",
+      "Membantu menjaga kualitas udara di ruangan",
+      "Alternatif produk kebersihan tanpa bahan kimia keras",
+    ],
+  },
 ];
-

@@ -5,5 +5,23 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  min-height: 600px;
+  min-height: 850px; 
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footerImage :global(.animate-fade-in-up) {
+  animation: fadeInUp 1s ease-out forwards;
 }

@@ -21,7 +21,7 @@ const MemberModal = ({
         <div className="desc-member flex-1 p-8 lg:p-16 flex flex-col justify-center overflow-y-auto">
           <div className="flex items-center gap-4 mb-6">
             <span className="text-sm font-bold text-[#37723B]/60 tracking-widest">
-              Hi , nama saya
+              Hi , saya
             </span>
           </div>
 

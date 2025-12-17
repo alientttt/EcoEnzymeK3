@@ -13,10 +13,10 @@ const videoData = {
 };
 const VidioWrapper: React.FC = () => {
   return (
-    <Section>
-      <Container className="flex flex-col justify-center items-center">
-        <div className="flex w-full justify-center">
-          <figure className="w-full xl:max-w-[90%] rounded-xl">
+    <Section className="mt-16 mb-16">
+      <Container className="flex justify-center items-center">
+        <div className="flex w-full justify-start items-center">
+          <figure className="w-full xl:max-w-[90%] rounded-[10px]">
             <Video
               videoSrc={videoData.src}
               posterSrc={videoData.poster}
@@ -26,9 +26,8 @@ const VidioWrapper: React.FC = () => {
             />
           </figure>
         </div>
-
         <aside>
-          <div className="mt-4 ml-4">
+          <div className="">
             <YoutubeChannelCard
               channelName="TV Tani"
               subText="Kementerian Pertanian Indonesia"

@@ -5,10 +5,8 @@ import type { Slide } from "../../../data/dataAbout";
 import { Section } from "../../layout/Section";
 import styles from "./styles.module.css";
 
-// Constants
 const CARDS_PER_VIEW = 2;
 
-// Types
 type Direction = "left" | "right";
 
 interface ClickCoords {
@@ -156,7 +154,7 @@ const About = () => {
         >
           {/* Modal Header */}
           <div className={styles.modal__header}>
-            <h3 className={styles.modal__title}>📚 Detail</h3>
+            <h3 className={styles.modal__title}>Info Detail</h3>
             <button
               onClick={handleCloseDetails}
               className={styles.modal__close}

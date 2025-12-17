@@ -1,4 +1,6 @@
 import React from "react";
+import { ExternalLink } from "lucide-react";
+
 interface YoutubeChannelCardProps {
   channelName: string;
   subText: string;
@@ -6,6 +8,7 @@ interface YoutubeChannelCardProps {
   href: string;
   className?: string;
 }
+
 const YoutubeChannelCard: React.FC<YoutubeChannelCardProps> = ({
   channelName,
   subText,
@@ -19,38 +22,44 @@ const YoutubeChannelCard: React.FC<YoutubeChannelCardProps> = ({
       target="_blank"
       rel="noopener noreferrer"
       className={`
-        relative flex items-center gap-5 
-        w-full max-w-xl p-5 overflow-hiddencursor-pointer
+        group relative flex flex-col items-center text-center
+        w-full  p-8 bg-white border border-slate-100
+        rounded-[2rem] transition-all duration-500
+        hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-2
         ${className}
       `}
       aria-label={`Kunjungi channel YouTube ${channelName}`}
     >
-      <div className="absolute -right-10 -top-10 w-32 h-32 rounded-full blur-3xl opacity-50 transition-colors duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem]" />
 
-      <figure className="relative z-10 flex-shrink-0">
-        <div className="p-1 border-2 rounded-full">
-          <img
-            src={logoSrc}
-            alt={`${channelName} Logo`}
-            className="w-16 h-16 object-cover rounded-full"
-          />
+      <figure className="relative z-10 mb-6">
+        <div className="relative p-1 bg-gradient-to-tr from-red-500 to-orange-400 rounded-full">
+          <div className="bg-white p-1 rounded-full">
+            <img
+              src={logoSrc}
+              alt={`${channelName} Logo`}
+              className="w-20 h-20 object-cover rounded-full"
+            />
+          </div>
         </div>
       </figure>
 
-      <div className="relative z-10 flex flex-col items-start justify-center">
-        <h3 className="text-xl font-bold transition-colors">{channelName}</h3>
-        <p className="text-sm font-medium flex items-center gap-1">
+      <div className="relative z-10 flex flex-col items-center">
+        <h3 className="text-lg font-bold text-slate-800 group-hover:text-red-600 transition-colors">
+          {channelName}
+        </h3>
+        <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mt-1">
           {subText}
-          <span className="" title="Verified">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-              <path
-                fillRule="evenodd"
-                d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </span>
         </p>
+
+        <p className="text-sm text-slate-500 mt-4 leading-relaxed line-clamp-2">
+          Temukan konten inspiratif dan edukasi mengenai alam
+        </p>
+
+        <div className="mt-6 flex items-center gap-2 text-xs font-bold text-slate-800 group-hover:gap-3 transition-all">
+          <span>KUNJUNGI CHANNEL</span>
+          <ExternalLink size={14} className="text-slate-400" />
+        </div>
       </div>
     </a>
   );
